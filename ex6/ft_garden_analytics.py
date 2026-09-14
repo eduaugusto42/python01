@@ -1,12 +1,3 @@
-# TODO Criar função global de estatísticas.
-# TODO Montar main() para produzir exemplo.
-# TODO Acrescentar classmethod para criar uma planta anônima.
-# TODO Criar Seed(Flower).
-# TODO Criar classe interna de estatísticas.
-# TODO Fazer Tree registrar produce_shade()
-# TODO Criar função global de estatísticas.
-# TODO Montar main() para produzir exemplo.
-
 class Plant:
     class Stats:
         def __init__(self):
@@ -129,3 +120,56 @@ class Tree(Plant):
     def show(self):
         super().show()
         print(f"Trunk diameter: {self.trunk_diameter}cm")
+
+def garden_analytics(plant: Plant):
+    plant.stats.display()
+
+def main():
+    rose = Flower("Rose", 15.0, 10, "red")
+    oak = Tree("Oak", 200.0, 365, 5.0)
+    sunflower = Seed("Sunflower", 80.0, 45, "yellow")
+    unknown = Plant.create_anonymous()
+
+    print("=== Garden statistics ===")
+    print("=== Check year-old")
+    print(f"Is 30 days more than a year? -> {Plant.is_over_year(30)}")
+    print(f"Is 400 days more than a year? -> {Plant.is_over_year(400)}")
+    print()
+    print("=== Flower")
+    rose.show()
+    print(f"[statistics for {rose.name}]")
+    garden_analytics(rose)
+    print("[asking the rose to grow and bloom]")
+    rose.grow(8)
+    rose.bloom()
+    rose.show()
+    print(f"[statistics for {rose.name}]")
+    garden_analytics(rose)
+    print()
+    print("=== Tree")
+    oak.show()
+    print(f"[statistics for {oak.name}]")
+    garden_analytics(oak)
+    print("[asking the oak to produce shade]")
+    oak.produce_shade()
+    print(f"[statistics for {oak.name}]")
+    garden_analytics(oak)
+    print()
+    print("=== Seed")
+    sunflower.show()
+    print("[make sunflower grow, age and bloom]")
+    sunflower.grow(30)
+    sunflower.age(20)
+    sunflower.bloom()
+    sunflower.show()
+    print(f"[statistics for {sunflower.name}]")
+    garden_analytics(sunflower)
+    print()
+    print("=== Anonymous")
+    unknown.show()
+    print(f"[statistics for {unknown.name}]")
+    garden_analytics(unknown)
+
+
+if __name__ == "__main__":
+    main()
