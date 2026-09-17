@@ -1,4 +1,4 @@
-def main():
+def main() -> None:
     plants = {
             "rose": Plant("Rose", 25.0, 30),
             "oak": Plant("Oak", 200.0, 365),
@@ -8,26 +8,29 @@ def main():
             }
     ft_plant_factory(plants)
 
+
 class Plant:
-    def __init__(self, name, height, days):
+    def __init__(self, name: str, height: float, days: int):
         self.name = name
         self.height = height
         self.days = days
 
-    def age(self):
+    def age(self) -> None:
         self.days += 1
 
-    def grow(self, growth):
+    def grow(self, growth: float) -> None:
         self.height += growth
 
-    def show(self):
+    def show(self) -> None:
         print(f"{self.name}: {round(self.height, 2)}cm, {self.days} days old")
 
-def ft_plant_factory(plants: dict[str, Plant]):
+
+def ft_plant_factory(plants: dict[str, Plant]) -> None:
     print("=== Plant Factory Output ===")
     for plant in plants.values():
         print("Created:", end=" ")
         plant.show()
+
 
 if __name__ == "__main__":
     main()
