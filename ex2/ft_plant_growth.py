@@ -1,14 +1,6 @@
-# *************************************************************************** #
-#                                                                             #
-#                                                        :::      ::::::::    #
-#    ft_plant_growth.py                                :+:      :+:    :+:    #
-#                                                    +:+ +:+         +:+      #
-#    By: eduaaugu <eduaaugu@student.42sp.org.br>   +#+  +:+       +#+         #
-#                                                +#+#+#+#+#+   +#+            #
-#    Created: 2026/09/03 17:58:12 by eduaaugu         #+#    #+#              #
-#    Updated: 2026/09/04 17:33:25 by eduaaugu        ###   ########.fr        #
-#                                                                             #
-# *************************************************************************** #
+def main():
+    rose = Plant("Rose", 25.0, 30)
+    ft_plant_growth(rose, 0.8)
 
 class Plant:
     def __init__(self, name, height, days):
@@ -36,10 +28,6 @@ def ft_plant_growth(plant: Plant, growth: float | int):
         plant.grow(growth)
         plant.show()
     print(f"Growth this week: {round(plant.height - initial_height, 2)}cm")
-
-def main():
-    rose = Plant("Rose", 25.0, 30)
-    ft_plant_growth(rose, 0.8)
 
 if __name__ == "__main__":
     main()

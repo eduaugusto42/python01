@@ -1,14 +1,26 @@
-# *************************************************************************** #
-#                                                                             #
-#                                                        :::      ::::::::    #
-#    ft_plant_types.py                                 :+:      :+:    :+:    #
-#                                                    +:+ +:+         +:+      #
-#    By: eduaaugu <eduaaugu@student.42sp.org.br>   +#+  +:+       +#+         #
-#                                                +#+#+#+#+#+   +#+            #
-#    Created: 2026/09/08 15:11:04 by eduaaugu         #+#    #+#              #
-#    Updated: 2026/09/10 12:57:25 by eduaaugu        ###   ########.fr        #
-#                                                                             #
-# *************************************************************************** #
+def main():
+    rose = Flower("Rose", 15.0, 10, "red")
+    oak = Tree("Oak", 200.0, 365, 5.0)
+    tomato = Vegetable("Tomato", 5.0, 10, "April")
+
+    print("=== Garden Plant Types ===")
+    print("=== Flower")
+    rose.show()
+    print("[asking the rose to bloom]")
+    rose.bloom()
+    rose.show()
+    print()
+    print("=== Tree")
+    oak.show()
+    print("[asking the oak to produce shade]")
+    oak.produce_shade()
+    print()
+    print("=== Vegetable")
+    tomato.show()
+    print("[make the tomato grow and age for 20 days]")
+    tomato.grow(42.0)
+    tomato.age(20)
+    tomato.show()
 
 class Plant:
     def __init__(self, name, height, days):
@@ -77,30 +89,6 @@ class Vegetable(Plant):
         super().show()
         print(f"Harvest season: {self.harvest_season}")
         print(f"Nutritional value: {self.nutritional_value}")
-
-def main():
-    rose = Flower("Rose", 15.0, 10, "red")
-    oak = Tree("Oak", 200.0, 365, 5.0)
-    tomato = Vegetable("Tomato", 5.0, 10, "April")
-
-    print("=== Garden Plant Types ===")
-    print("=== Flower")
-    rose.show()
-    print("[asking the rose to bloom]")
-    rose.bloom()
-    rose.show()
-    print()
-    print("=== Tree")
-    oak.show()
-    print("[asking the oak to produce shade]")
-    oak.produce_shade()
-    print()
-    print("=== Vegetable")
-    tomato.show()
-    print("[make the tomato grow and age for 20 days]")
-    tomato.grow(42.0)
-    tomato.age(20)
-    tomato.show()
 
 if __name__ == "__main__":
     main()

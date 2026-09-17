@@ -1,14 +1,18 @@
-# *************************************************************************** #
-#                                                                             #
-#                                                        :::      ::::::::    #
-#    ft_garden_security.py                             :+:      :+:    :+:    #
-#                                                    +:+ +:+         +:+      #
-#    By: eduaaugu <eduaaugu@student.42sp.org.br>   +#+  +:+       +#+         #
-#                                                +#+#+#+#+#+   +#+            #
-#    Created: 2026/09/08 11:12:39 by eduaaugu         #+#    #+#              #
-#    Updated: 2026/09/08 14:36:09 by eduaaugu        ###   ########.fr        #
-#                                                                             #
-# *************************************************************************** #
+def main():
+    rose = Plant("Rose", 15.0, 10)
+
+    print("=== Garden Security System ===")
+    print("Plant created:", end=" ")
+    rose.show()
+    print()
+    ft_height_security(rose, 25)
+    ft_age_security(rose, 30)
+    print()
+    ft_height_security(rose, -25)
+    ft_age_security(rose, -30)
+    print()
+    print("Current state:", end=" ")
+    rose.show()
 
 class Plant:
     def __init__(self, name, height, days):
@@ -58,22 +62,6 @@ def ft_height_security(plant: Plant, height: int):
     else:
         print(f"{plant.name}: Error, height can't be negative")
         print("Height update rejected")
-
-def main():
-    rose = Plant("Rose", 15.0, 10)
-
-    print("=== Garden Security System ===")
-    print("Plant created:", end=" ")
-    rose.show()
-    print()
-    ft_height_security(rose, 25.0)
-    ft_age_security(rose, 30)
-    print()
-    ft_height_security(rose, -25)
-    ft_age_security(rose, -30)
-    print()
-    print("Current state:", end=" ")
-    rose.show()
 
 if __name__ == "__main__":
     main()
