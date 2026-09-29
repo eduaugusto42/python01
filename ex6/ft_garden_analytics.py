@@ -70,8 +70,11 @@ class Plant:
 
     def __init__(self, name: str, height: float, days: int):
         self.name = name
-        self._height = height
-        self._days = days
+        self._height = 0.0
+        self._days = 0
+
+        self.set_height(height)
+        self.set_age(days)
         self.stats = Plant.Stats()
 
     @classmethod

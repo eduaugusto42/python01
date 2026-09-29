@@ -1,5 +1,5 @@
 def main() -> None:
-    rose = Plant("Rose", 15.0, 10)
+    rose = Plant("Rose", -15.0, -10)
 
     print("=== Garden Security System ===")
     print("Plant created:", end=" ")
@@ -18,8 +18,11 @@ def main() -> None:
 class Plant:
     def __init__(self, name: str, height: float, days: int):
         self.name = name
-        self._height = height
-        self._days = days
+        self._height = 0.0
+        self._days = 0
+
+        self.set_height(height)
+        self.set_age(days)
 
     def age(self) -> None:
         self._days += 1

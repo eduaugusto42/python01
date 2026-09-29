@@ -30,8 +30,11 @@ class Plant:
             days: int
             ) -> None:
         self.name = name
-        self._height = height
-        self._days = days
+        self._height = 0.0
+        self._days = 0
+
+        self.set_height(height)
+        self.set_age(days)
 
     def age(self, time: int) -> None:
         self._days += time
